@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Campus Events and Technical Hackathons">
+    <title>Student Hub Portal - Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <div class="notification" id="notification" role="region" aria-label="Campus Announcement">
+        <div>
+            🎉 Registrations are now open for Annual Tech Fest 2026 & Sports Championship!
+        </div>
+        <button onclick="closeBanner()" aria-label="Close Announcement Banner">✕</button>
+    </div>
+
+    <header role="banner">
+        <h1>🎉 Campus Events & Activities</h1>
+        <p>Explore, Participate, and Register for Upcoming University Events</p>
+    </header>
+
+    <nav role="navigation" aria-label="Primary Navigation">
+        <div class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
+            ☰
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html" class="active">Events</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Admin</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container" role="main">
+        <!-- Event Highlights Slider -->
+        <div class="slider" aria-label="Events Gallery">
+            <div class="slide active-slide">
+                <img src="https://picsum.photos/1200/450?random=21" alt="Independence Day Celebration at University Campus">
+            </div>
+            <div class="slide">
+                <img src="https://picsum.photos/1200/450?random=22" alt="Coding Hackathon and Robotics Arena at Tech Fest">
+            </div>
+            <div class="slide">
+                <img src="https://picsum.photos/1200/450?random=23" alt="Annual Inter-college Athletics and Sports Day">
+            </div>
+            <button class="prev" onclick="prevSlide()" aria-label="Previous Slide">❮</button>
+            <button class="next" onclick="nextSlide()" aria-label="Next Slide">❯</button>
+        </div>
+
+        <section class="card">
+            <h2>Upcoming Campus Competitions & Festivals</h2>
+            <p>Click "Register Now" to reserve your participation seat. Confirmation will be sent instantly.</p>
+        </section>
+
+        <!-- Events Grid -->
+        <div class="dashboard" id="eventsContainer">
+            <div class="box" style="display:flex;flex-direction:column;justify-content:space-between;border-top:4px solid #005bea;">
+                <div>
+                    <span style="background:#f1f5f9;color:#475569;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:bold;">
+                        National Celebration
+                    </span>
+                    <h3 style="margin-top:10px;">🇮🇳 Independence Day</h3>
+                    <p><strong>📅 Date:</strong> 15 August 2026</p>
+                    <p><strong>📍 Venue:</strong> Central Auditorium</p>
+                    <p style="margin-top:8px;font-size:14px;color:#475569;">
+                        Cultural Program, Patriotic Speeches, Song Competition, and Flag Hoisting Ceremony.
+                    </p>
+                </div>
+                <div style="margin-top:15px;">
+                    <button type="button" class="ajax-event-btn" data-event-id="1" style="width:100%;">
+                        Register Now
+                    </button>
+                </div>
+            </div>
+
+            <div class="box" style="display:flex;flex-direction:column;justify-content:space-between;border-top:4px solid #005bea;">
+                <div>
+                    <span style="background:#f1f5f9;color:#475569;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:bold;">
+                        Technical Festival
+                    </span>
+                    <h3 style="margin-top:10px;">💻 Tech Fest 2026</h3>
+                    <p><strong>📅 Date:</strong> 20 September 2026</p>
+                    <p><strong>📍 Venue:</strong> Tech Arena Lab Complex</p>
+                    <p style="margin-top:8px;font-size:14px;color:#475569;">
+                        Coding Challenge, 24-hr Hackathon, Robotics Competition, and AI Masterclass.
+                    </p>
+                </div>
+                <div style="margin-top:15px;">
+                    <button type="button" class="ajax-event-btn" data-event-id="2" style="width:100%;">
+                        Register Now
+                    </button>
+                </div>
+            </div>
+
+            <div class="box" style="display:flex;flex-direction:column;justify-content:space-between;border-top:4px solid #005bea;">
+                <div>
+                    <span style="background:#f1f5f9;color:#475569;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:bold;">
+                        Sports Event
+                    </span>
+                    <h3 style="margin-top:10px;">🏆 Annual Sports Meet</h3>
+                    <p><strong>📅 Date:</strong> 10 October 2026</p>
+                    <p><strong>📍 Venue:</strong> University Sports Ground</p>
+                    <p style="margin-top:8px;font-size:14px;color:#475569;">
+                        Cricket League, Football Tournament, Track & Field Athletics, and Badminton.
+                    </p>
+                </div>
+                <div style="margin-top:15px;">
+                    <button type="button" class="ajax-event-btn" data-event-id="3" style="width:100%;">
+                        Register Now
+                    </button>
+                </div>
+            </div>
+
+            <div class="box" style="display:flex;flex-direction:column;justify-content:space-between;border-top:4px solid #005bea;">
+                <div>
+                    <span style="background:#f1f5f9;color:#475569;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:bold;">
+                        Cultural Festival
+                    </span>
+                    <h3 style="margin-top:10px;">🎭 Cultural Youth Fest</h3>
+                    <p><strong>📅 Date:</strong> 05 November 2026</p>
+                    <p><strong>📍 Venue:</strong> Open Air Amphitheatre</p>
+                    <p style="margin-top:8px;font-size:14px;color:#475569;">
+                        Classical & Folk Dance, Musical Band Night, Street Play Drama, and Fashion Showcase.
+                    </p>
+                </div>
+                <div style="margin-top:15px;">
+                    <button type="button" class="ajax-event-btn" data-event-id="4" style="width:100%;">
+                        Register Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()" aria-label="Close dialog">&times;</span>
+            <h2 id="modalTitle">🎓 Notification</h2>
+            <p id="modalText">Message goes here...</p>
+            <br>
+            <button type="button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode theme">🌙</button>
+    <button id="scrollTopBtn" onclick="scrollTopPage()" aria-label="Scroll back to top of page">⬆</button>
+
+    <footer role="contentinfo">
+        <p>© 2026 Student Hub Portal | ITUE203 Full-Stack Web Development Frameworks | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

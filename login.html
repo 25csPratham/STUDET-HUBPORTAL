@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Secure Login for Student Hub Portal">
+    <title>Student Hub Portal - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <div class="notification" id="notification" role="region" aria-label="Campus Announcement">
+        <div>
+            🔔 Welcome Back! Login to access your Student Dashboard and registered courses.
+        </div>
+        <button onclick="closeBanner()" aria-label="Close Announcement Banner">✕</button>
+    </div>
+
+    <header role="banner">
+        <h1>🔐 Student & Admin Login</h1>
+        <p>Access Your Student Hub Portal Account</p>
+    </header>
+
+    <nav role="navigation" aria-label="Primary Navigation">
+        <div class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
+            ☰
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="register.html">Register</a>
+            <a href="login.html" class="active">Login</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Admin</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container" role="main">
+        <div class="card" style="max-width: 520px; margin: 0 auto;">
+            <h2>Account Login</h2>
+            <p>Enter your credentials to securely access your student or administrator portal.</p>
+            <br>
+
+            <form id="loginForm" novalidate>
+                <label for="loginStudentId"><strong>Student ID / Admin ID <span style="color:red;">*</span></strong></label>
+                <input type="text" id="loginStudentId" name="studentId" placeholder="e.g. 25CS076 or ADMIN01" required autocomplete="username">
+
+                <label for="loginPassword"><strong>Password <span style="color:red;">*</span></strong></label>
+                <input type="password" id="loginPassword" name="password" placeholder="Enter Password" required autocomplete="current-password">
+
+                <button type="submit" id="loginBtn" style="margin-top:10px;width:100%;">Secure Login</button>
+            </form>
+
+            <br>
+            <div style="display:flex;justify-content:space-between;font-size:14px;">
+                <p>
+                    Forgot Password? <a href="#" onclick="openModal('Password Reset: A temporary password reset link will be dispatched to your registered institutional email.', 'Password Recovery')" style="color:#005bea;font-weight:bold;">Click Here</a>
+                </p>
+                <p>
+                    <a href="register.html" style="color:#005bea;font-weight:bold;">Create Account</a>
+                </p>
+            </div>
+
+            <hr style="margin:20px 0;border:0;border-top:1px solid #e2e8f0;">
+
+            <!-- Test Credentials for Practical 15 Viva Evaluation -->
+            <div style="background:#f8fafc;padding:14px;border-radius:8px;border:1px dashed #94a3b8;font-size:13px;">
+                <strong>🔑 Practical 15 Evaluation Test Credentials:</strong>
+                <div style="margin-top:6px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+                    <div>
+                        <strong>Student Account:</strong><br>
+                        ID: <code>25CS076</code><br>
+                        Pass: <code>Student@123</code>
+                    </div>
+                    <div>
+                        <strong>Administrator Account:</strong><br>
+                        ID: <code>ADMIN01</code><br>
+                        Pass: <code>Admin@123</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()" aria-label="Close dialog">&times;</span>
+            <h2 id="modalTitle">🎓 Notification</h2>
+            <p id="modalText">Message goes here...</p>
+            <br>
+            <button type="button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode theme">🌙</button>
+    <button id="scrollTopBtn" onclick="scrollTopPage()" aria-label="Scroll back to top of page">⬆</button>
+
+    <footer role="contentinfo">
+        <p>© 2026 Student Hub Portal | ITUE203 Full-Stack Web Development Frameworks | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

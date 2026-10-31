@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITUE203 - Practical 15 Submission - 25CS076</title>
+    <style>
+        @page { size: A4; margin: 20mm; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1e293b; max-width: 900px; margin: 0 auto; padding: 25px; background: #fff; }
+        .header-box { border: 2px solid #005bea; padding: 20px; text-align: center; border-radius: 8px; background: #f8fafc; margin-bottom: 25px; }
+        .header-box h2 { margin: 0; color: #005bea; font-size: 20px; }
+        .header-box h3 { margin: 5px 0; color: #334155; font-size: 16px; }
+        h1 { color: #005bea; text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 30px; font-size: 22px; }
+        h2 { color: #0f172a; border-left: 4px solid #005bea; padding-left: 10px; margin-top: 30px; font-size: 18px; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px; }
+        th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+        th { background: #f1f5f9; color: #0f172a; font-weight: 600; }
+        .badge { padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+        .badge-pass { background: #dcfce7; color: #15803d; }
+        pre { background: #0f172a; color: #f8fafc; padding: 15px; border-radius: 6px; overflow-x: auto; font-size: 13px; font-family: Consolas, monospace; }
+        .print-btn { background: #005bea; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 16px; cursor: pointer; margin-bottom: 20px; }
+        @media print { .print-btn { display: none; } }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Save to PDF</button>
+
+    <div class="header-box">
+        <h2>CHAROTAR UNIVERSITY OF SCIENCE AND TECHNOLOGY (CHARUSAT)</h2>
+        <h3>FACULTY OF TECHNOLOGY AND ENGINEERING</h3>
+        <h3>Chandubhai S. Patel Institute of Technology (CSPIT)</h3>
+        <p><strong>Department of Computer Science &amp; Engineering</strong></p>
+        <hr style="border:0;border-top:1px solid #cbd5e1;margin:12px 0;">
+        <p><strong>Academic Year:</strong> 2026-27 | <strong>Semester:</strong> 3rd | <strong>Date:</strong> 31/10/2026</p>
+        <p><strong>Course Code:</strong> ITUE203 | <strong>Course Name:</strong> WEB DEVELOPMENT FRAMEWORKS</p>
+        <p><strong>Student Name:</strong> Patel Pratham Bhavik | <strong>Student ID / Roll No:</strong> 25CS076</p>
+    </div>
+
+    <h1>Practical - 15: Final Integration, Testing, Documentation, GitHub Submission, and Local Deployment</h1>
+
+    <h2>1. Problem Definition</h2>
+    <p>Integrate all modules into a single deployable <strong>StudentHub</strong> portal. Verify navigation, responsiveness, authentication, database operations, security checks, AJAX functionality, and documentation. Deploy locally using XAMPP/Apache virtual host and submit GitHub repository.</p>
+
+    <h2>2. Key Deliverables Completed</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Requirement</th>
+                <th>Implementation Details</th>
+                <th>Verification Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Navigation &amp; Responsiveness</strong></td>
+                <td>Unified responsive navigation bar across all 11 pages with mobile menu and active page indicator.</td>
+                <td><span class="badge badge-pass">PASSED</span></td>
+            </tr>
+            <tr>
+                <td><strong>Authentication &amp; RBAC</strong></td>
+                <td>PHP session management, BCrypt hashing, Student vs Administrator role verification.</td>
+                <td><span class="badge badge-pass">PASSED</span></td>
+            </tr>
+            <tr>
+                <td><strong>Database Operations</strong></td>
+                <td>MySQL database <code>studenthub</code> with 7 tables, PDO prepared statements, and test seed data.</td>
+                <td><span class="badge badge-pass">PASSED</span></td>
+            </tr>
+            <tr>
+                <td><strong>AJAX Interactivity</strong></td>
+                <td>RESTful API controller (<code>api.php</code>) handling asynchronous event registration, logins, and feedback.</td>
+                <td><span class="badge badge-pass">PASSED</span></td>
+            </tr>
+            <tr>
+                <td><strong>Security Checklist</strong></td>
+                <td>Zero SQLi vulnerability (PDO), XSS mitigation (<code>htmlspecialchars</code>), CSRF defense (session tokens).</td>
+                <td><span class="badge badge-pass">PASSED</span></td>
+            </tr>
+            <tr>
+                <td><strong>Accessibility (WCAG 2.1)</strong></td>
+                <td>Semantic tags, form labels, ARIA landmarks, high contrast theme, keyboard tab navigation.</td>
+                <td><span class="badge badge-pass">PASSED</span></td>
+            </tr>
+            <tr>
+                <td><strong>Local Deployment</strong></td>
+                <td>Apache Virtual Host configuration file (<code>apache-vhost.conf</code>) for <code>studenthub.local</code>.</td>
+                <td><span class="badge badge-pass">PASSED</span></td>
+            </tr>
+            <tr>
+                <td><strong>Documentation</strong></td>
+                <td>Exhaustive <code>README.md</code>, <code>TEST_REPORT.md</code>, and Word submission document.</td>
+                <td><span class="badge badge-pass">PASSED</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. Practical 15 Evaluation Test Credentials</h2>
+    <table>
+        <thead>
+            <tr><th>Account Type</th><th>Student ID / Roll</th><th>Password</th><th>Permitted Actions</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>Student Account</strong></td><td><code>25CS076</code></td><td><code>Student@123</code></td><td>View dashboard, marks, courses, register for events, edit profile, submit feedback</td></tr>
+            <tr><td><strong>Admin Account</strong></td><td><code>ADMIN01</code></td><td><code>Admin@123</code></td><td>All student actions + access Central Admin Control Panel, review student roster, view inquiries</td></tr>
+        </tbody>
+    </table>
+
+    <h2>4. Test Execution Summary (26/26 Passed)</h2>
+    <p>All 26 end-to-end integration test cases have successfully passed, verifying navigation, session state, prepared query execution, event registration via AJAX, security filtering, and accessibility landmarks.</p>
+
+    <h2>5. Repository &amp; Deployment Summary</h2>
+    <ul>
+        <li><strong>Local Virtual Host:</strong> <code>http://studenthub.local</code> (or <code>http://localhost/studenthub</code>)</li>
+        <li><strong>GitHub Repository:</strong> <a href="https://github.com/25csPratham/STUDET-HUBPORTAL">https://github.com/25csPratham/STUDET-HUBPORTAL</a></li>
+    </ul>
+
+    <br><br>
+    <div style="display:flex;justify-content:space-between;margin-top:40px;">
+        <div>
+            __________________________<br>
+            <strong>Patel Pratham Bhavik (25CS076)</strong><br>
+            Student Signature
+        </div>
+        <div style="text-align:right;">
+            __________________________<br>
+            <strong>CSPIT Faculty Assessor</strong><br>
+            Department of Computer Science &amp; Engineering
+        </div>
+    </div>
+</body>
+</html>

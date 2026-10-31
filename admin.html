@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Central Administrator Control Panel">
+    <title>Student Hub Portal - Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <div class="notification" id="notification" role="region" aria-label="Campus Announcement">
+        <div>
+            🛡️ Administrative Notice: Institutional database backups occur daily at 02:00 AM UTC.
+        </div>
+        <button onclick="closeBanner()" aria-label="Close Announcement Banner">✕</button>
+    </div>
+
+    <header role="banner">
+        <h1>🛡️ Central Admin Panel</h1>
+        <p>Institutional Operations, Student Roster Management & System Controls</p>
+    </header>
+
+    <nav role="navigation" aria-label="Primary Navigation">
+        <div class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
+            ☰
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html" class="active">Admin</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container" role="main">
+        <section class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;">
+                <div>
+                    <h2>Central Administration Panel</h2>
+                    <p>Welcome, <strong>System Administrator</strong></p>
+                    <p style="font-size:14px;color:#64748b;">Manage registered students, view contact queries, and audit system feedbacks.</p>
+                </div>
+                <div>
+                    <span style="background:#fee2e2;color:#b91c1c;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:bold;">
+                        🔒 Admin Role Enforced
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metric Boxes -->
+        <section class="dashboard" aria-label="Administrative Key Metrics">
+            <div class="box">
+                <h3>👥 Total Students</h3>
+                <p style="font-size:28px;font-weight:bold;color:#005bea;">1,250</p>
+                <span style="font-size:13px;color:#64748b;">Enrolled Across Programs</span>
+            </div>
+            <div class="box">
+                <h3>🎉 Active Events</h3>
+                <p style="font-size:28px;font-weight:bold;color:#10b981;">4</p>
+                <span style="font-size:13px;color:#64748b;">Published & Open for Registration</span>
+            </div>
+            <div class="box">
+                <h3>📩 Inquiries Received</h3>
+                <p style="font-size:28px;font-weight:bold;color:#f59e0b;">18</p>
+                <span style="font-size:13px;color:#64748b;">Unread Contact Messages</span>
+            </div>
+            <div class="box">
+                <h3>⭐ Student Reviews</h3>
+                <p style="font-size:28px;font-weight:bold;color:#8b5cf6;">4.8 / 5</p>
+                <span style="font-size:13px;color:#64748b;">Based on 142 Submissions</span>
+            </div>
+        </section>
+
+        <!-- Student Roster Table -->
+        <section class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:15px;">
+                <h2>🎓 Student Management Roster</h2>
+                <button type="button" onclick="openModal('Add Student Dialog: Enter Roll Number, Student Name, Program, and Contact to register new entry.', 'Create Student')" style="background:#10b981;">
+                    ➕ Add Student
+                </button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Student ID</th>
+                        <th scope="col">Student Name</th>
+                        <th scope="col">Academic Program</th>
+                        <th scope="col">Enrollment Status</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>101</strong></td>
+                        <td>Sapan Desai</td>
+                        <td>BCA</td>
+                        <td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:10px;font-size:12px;font-weight:bold;">Active</span></td>
+                        <td>
+                            <button type="button" onclick="openModal('Viewing Record for Sapan Desai (ID: 101). Program: BCA.', 'Student Details')" style="padding:4px 10px;font-size:12px;">
+                                View
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>25CS076</strong></td>
+                        <td>Patel Pratham Bhavik</td>
+                        <td>B.Tech (CSE)</td>
+                        <td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:10px;font-size:12px;font-weight:bold;">Active</span></td>
+                        <td>
+                            <button type="button" onclick="openModal('Viewing Record for Patel Pratham Bhavik (ID: 25CS076). Program: B.Tech (CSE). Overall CGPA: 8.5.', 'Student Details')" style="padding:4px 10px;font-size:12px;">
+                                View
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>103</strong></td>
+                        <td>Om Patel</td>
+                        <td>MCA</td>
+                        <td><span style="background:#f1f5f9;color:#64748b;padding:3px 8px;border-radius:10px;font-size:12px;font-weight:bold;">Inactive</span></td>
+                        <td>
+                            <button type="button" onclick="openModal('Viewing Record for Om Patel (ID: 103). Program: MCA.', 'Student Details')" style="padding:4px 10px;font-size:12px;">
+                                View
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>104</strong></td>
+                        <td>Aarav Shah</td>
+                        <td>BBA</td>
+                        <td><span style="background:#dcfce7;color:#15803d;padding:3px 8px;border-radius:10px;font-size:12px;font-weight:bold;">Active</span></td>
+                        <td>
+                            <button type="button" onclick="openModal('Viewing Record for Aarav Shah (ID: 104). Program: BBA.', 'Student Details')" style="padding:4px 10px;font-size:12px;">
+                                View
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Admin Quick Actions -->
+        <section class="card">
+            <h2>⚡ Administrative Operations</h2>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;">
+                <button type="button" onclick="openModal('📄 Full Enrollment Report generated for Odd Semester 2026. Ready for CSV download.', 'Student Roster')">
+                    📊 Generate Roster Report
+                </button>
+                <button type="button" onclick="openModal('📢 Broadcast Message: Announcement dispatched to all enrolled student emails.', 'Broadcast Notice')">
+                    📢 Broadcast Notice
+                </button>
+                <button type="button" onclick="openModal('🛠️ System Cache Cleared and Session store optimized.', 'Cache Purge')">
+                    🧹 Purge Cache
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()" aria-label="Close dialog">&times;</span>
+            <h2 id="modalTitle">🎓 Notification</h2>
+            <p id="modalText">Message goes here...</p>
+            <br>
+            <button type="button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode theme">🌙</button>
+    <button id="scrollTopBtn" onclick="scrollTopPage()" aria-label="Scroll back to top of page">⬆</button>
+
+    <footer role="contentinfo">
+        <p>© 2026 Student Hub Portal | ITUE203 Full-Stack Web Development Frameworks | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

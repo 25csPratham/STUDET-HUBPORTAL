@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Registration Form for Student Hub Portal">
+    <title>Student Hub Portal - Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <div class="notification" id="notification" role="region" aria-label="Campus Announcement">
+        <div>
+            🎉 New Student Admissions & Portal Registrations are Now Live!
+        </div>
+        <button onclick="closeBanner()" aria-label="Close Announcement Banner">✕</button>
+    </div>
+
+    <header role="banner">
+        <h1>📝 Student Registration</h1>
+        <p>Create your verified Student Hub Portal Account</p>
+    </header>
+
+    <nav role="navigation" aria-label="Primary Navigation">
+        <div class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
+            ☰
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="register.html" class="active">Register</a>
+            <a href="login.html">Login</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Admin</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container" role="main">
+        <div class="card" style="max-width: 600px; margin: 0 auto;">
+            <h2>Student Registration Form</h2>
+            <p>Fill out the required information below to create your official academic account.</p>
+            <br>
+
+            <form id="registerForm" novalidate>
+                <label for="name"><strong>Full Name <span style="color:red;">*</span></strong></label>
+                <input type="text" id="name" name="name" placeholder="e.g. Pratham Patel" required autocomplete="name">
+
+                <label for="email"><strong>Email Address <span style="color:red;">*</span></strong></label>
+                <input type="email" id="email" name="email" placeholder="e.g. student@studenthub.com" required autocomplete="email">
+
+                <label for="studentId"><strong>Student ID / Roll No <span style="color:red;">*</span></strong></label>
+                <input type="text" id="studentId" name="studentId" placeholder="e.g. 25CS076" required autocomplete="username">
+
+                <label for="course"><strong>Select Course Program <span style="color:red;">*</span></strong></label>
+                <select id="course" name="course" required>
+                    <option value="">-- Choose Academic Course --</option>
+                    <option value="B.Tech">B.Tech (Computer Science & Engineering)</option>
+                    <option value="BCA">BCA (Bachelor of Computer Applications)</option>
+                    <option value="MCA">MCA (Master of Computer Applications)</option>
+                    <option value="BBA">BBA (Business Administration)</option>
+                    <option value="MBA">MBA (Master of Business Administration)</option>
+                </select>
+
+                <label for="phone"><strong>Mobile Number <span style="color:red;">*</span></strong></label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g. 9876543210" required autocomplete="tel">
+
+                <label for="password"><strong>Create Password <span style="color:red;">*</span></strong></label>
+                <input type="password" id="password" name="password" placeholder="Minimum 6 characters" required autocomplete="new-password">
+
+                <label for="confirmPassword"><strong>Confirm Password <span style="color:red;">*</span></strong></label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" required autocomplete="new-password">
+
+                <button type="submit" id="registerBtn" style="margin-top:10px;width:100%;">Register Now</button>
+            </form>
+
+            <br>
+            <p style="text-align:center;">
+                Already have an account? <a href="login.html" style="color:#005bea;font-weight:bold;">Login Here</a>
+            </p>
+        </div>
+    </main>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()" aria-label="Close dialog">&times;</span>
+            <h2 id="modalTitle">🎓 Notification</h2>
+            <p id="modalText">Message goes here...</p>
+            <br>
+            <button type="button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode theme">🌙</button>
+    <button id="scrollTopBtn" onclick="scrollTopPage()" aria-label="Scroll back to top of page">⬆</button>
+
+    <footer role="contentinfo">
+        <p>© 2026 Student Hub Portal | ITUE203 Full-Stack Web Development Frameworks | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

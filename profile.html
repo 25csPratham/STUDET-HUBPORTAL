@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Profile and Academic Records">
+    <title>Student Hub Portal - Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <div class="notification" id="notification" role="region" aria-label="Campus Announcement">
+        <div>
+            👤 Student Profile: Review your registered institutional contact details and academic program.
+        </div>
+        <button onclick="closeBanner()" aria-label="Close Announcement Banner">✕</button>
+    </div>
+
+    <header role="banner">
+        <h1>👤 Student Profile</h1>
+        <p>Personal & Academic Information System</p>
+    </header>
+
+    <nav role="navigation" aria-label="Primary Navigation">
+        <div class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
+            ☰
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="profile.html" class="active">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Admin</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container" role="main">
+        <!-- Profile Banner Card -->
+        <div class="card" style="text-align:center;">
+            <img src="https://i.pravatar.cc/180?img=12" alt="Student Profile Photograph" style="width:140px;height:140px;border-radius:50%;border:4px solid #005bea;object-fit:cover;box-shadow:0 4px 10px rgba(0,0,0,0.15);">
+            <h2 style="margin-top:15px;" class="profile-name">Patel Pratham Bhavik</h2>
+            <p style="color:#005bea;font-weight:bold;">
+                🎓 Bachelor of Technology (Computer Science & Engineering)
+            </p>
+            <p>
+                <span style="background:#e0e7ff;color:#3730a3;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:bold;">
+                    Status: Verified Student (Semester 3)
+                </span>
+            </p>
+            <br>
+            <button type="button" onclick="openModal('Profile Edit: You can modify your phone number and city in the form below.', 'Edit Profile')">
+                ✏ Edit Information
+            </button>
+        </div>
+
+        <!-- Personal & Academic Details Table -->
+        <div class="card">
+            <h2>📋 Detailed Student Record</h2>
+            <p>Official verified records stored in the university student management database.</p>
+            <br>
+            <table>
+                <tbody>
+                    <tr>
+                        <th style="width:30%;">Full Name</th>
+                        <td class="profile-name">Patel Pratham Bhavik</td>
+                    </tr>
+                    <tr>
+                        <th>Student ID / Roll No</th>
+                        <td class="profile-id">25CS076</td>
+                    </tr>
+                    <tr>
+                        <th>Institutional Email</th>
+                        <td class="profile-email">student@studenthub.com</td>
+                    </tr>
+                    <tr>
+                        <th>Primary Phone</th>
+                        <td>+91 9876543210</td>
+                    </tr>
+                    <tr>
+                        <th>Residential City</th>
+                        <td>Nadiad, Gujarat</td>
+                    </tr>
+                    <tr>
+                        <th>Date of Birth</th>
+                        <td>12 January 2006</td>
+                    </tr>
+                    <tr>
+                        <th>College / Institute</th>
+                        <td>Chandubhai S. Patel Institute of Technology (CSPIT)</td>
+                    </tr>
+                    <tr>
+                        <th>University</th>
+                        <td>Charotar University of Science and Technology (CHARUSAT)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
+                <button type="button" onclick="location.href='dashboard.html'">
+                    ⬅ Back to Dashboard
+                </button>
+                <button type="button" onclick="openModal('📄 Official Student ID Card PDF generated and ready for print download.', 'ID Card Export')">
+                    🪪 Download Digital ID Card
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()" aria-label="Close dialog">&times;</span>
+            <h2 id="modalTitle">🎓 Notification</h2>
+            <p id="modalText">Message goes here...</p>
+            <br>
+            <button type="button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode theme">🌙</button>
+    <button id="scrollTopBtn" onclick="scrollTopPage()" aria-label="Scroll back to top of page">⬆</button>
+
+    <footer role="contentinfo">
+        <p>© 2026 Student Hub Portal | ITUE203 Full-Stack Web Development Frameworks | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

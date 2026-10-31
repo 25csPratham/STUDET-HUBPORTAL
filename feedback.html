@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal Feedback and Student Review System">
+    <title>Student Hub Portal - Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <div class="notification" id="notification" role="region" aria-label="Campus Announcement">
+        <div>
+            ⭐ Help us improve! Share your suggestions and user experience feedback.
+        </div>
+        <button onclick="closeBanner()" aria-label="Close Announcement Banner">✕</button>
+    </div>
+
+    <header role="banner">
+        <h1>⭐ Student Feedback & Review</h1>
+        <p>Continuous Improvement through Direct Student Evaluation</p>
+    </header>
+
+    <nav role="navigation" aria-label="Primary Navigation">
+        <div class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
+            ☰
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Admin</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html" class="active">Feedback</a>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container" role="main">
+        <div class="card">
+            <h2>Student Feedback & Suggestions</h2>
+            <p>Your inputs help the academic computing cell enhance usability, add features, and fix issues.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:20px;">
+            <!-- Feedback Form -->
+            <div class="card">
+                <h3>📝 Submit Your Feedback</h3>
+                <br>
+                <form id="feedbackForm" novalidate>
+                    <label for="fbName"><strong>Your Name (Optional)</strong></label>
+                    <input type="text" id="fbName" name="name" placeholder="Enter Your Name" autocomplete="name" value="Patel Pratham Bhavik">
+
+                    <label for="fbEmail"><strong>Email Address (Optional)</strong></label>
+                    <input type="email" id="fbEmail" name="email" placeholder="Enter Your Email" autocomplete="email" value="student@studenthub.com">
+
+                    <label for="fbRating"><strong>Overall Experience Rating <span style="color:red;">*</span></strong></label>
+                    <select id="fbRating" name="rating" required>
+                        <option value="5" selected>⭐⭐⭐⭐⭐ (5/5) - Excellent Experience</option>
+                        <option value="4">⭐⭐⭐⭐ (4/5) - Very Good</option>
+                        <option value="3">⭐⭐⭐ (3/5) - Good / Satisfactory</option>
+                        <option value="2">⭐⭐ (2/5) - Needs Improvement</option>
+                        <option value="1">⭐ (1/5) - Poor Experience</option>
+                    </select>
+
+                    <label for="fbComments"><strong>Feedback & Suggestions <span style="color:red;">*</span></strong></label>
+                    <textarea id="fbComments" name="comments" rows="5" placeholder="Share your suggestions, feature requests, or report any issues..." required></textarea>
+
+                    <button type="submit" id="feedbackBtn" style="margin-top:10px;width:100%;">Submit Feedback</button>
+                </form>
+            </div>
+
+            <!-- Recent Reviews -->
+            <div class="card">
+                <h3>💬 Recent Student Reviews</h3>
+                <br>
+                <div id="recentFeedbackList">
+                    <div style="padding:12px;border-bottom:1px solid #e2e8f0;margin-bottom:10px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <strong>Patel Pratham Bhavik</strong>
+                            <span style="color:#f59e0b;font-size:14px;">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p style="margin-top:6px;font-size:14px;color:#475569;">
+                            "StudentHub Portal makes tracking academic attendance, grades, and event registrations effortless! The dark mode is great."
+                        </p>
+                        <span style="font-size:12px;color:#94a3b8;">Posted on: 2026-10-30</span>
+                    </div>
+
+                    <div style="padding:12px;border-bottom:1px solid #e2e8f0;margin-bottom:10px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <strong>Sapan Desai</strong>
+                            <span style="color:#f59e0b;font-size:14px;">⭐⭐⭐⭐</span>
+                        </div>
+                        <p style="margin-top:6px;font-size:14px;color:#475569;">
+                            "Great UI design. Would love to see an integrated mobile push notification system for upcoming events."
+                        </p>
+                        <span style="font-size:12px;color:#94a3b8;">Posted on: 2026-10-28</span>
+                    </div>
+
+                    <div style="padding:12px;border-bottom:1px solid #e2e8f0;margin-bottom:10px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <strong>Kavya Mehta</strong>
+                            <span style="color:#f59e0b;font-size:14px;">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p style="margin-top:6px;font-size:14px;color:#475569;">
+                            "The course overview and result dashboard are very intuitive and quick to load on mobile."
+                        </p>
+                        <span style="font-size:12px;color:#94a3b8;">Posted on: 2026-10-25</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()" aria-label="Close dialog">&times;</span>
+            <h2 id="modalTitle">🎓 Notification</h2>
+            <p id="modalText">Message goes here...</p>
+            <br>
+            <button type="button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode theme">🌙</button>
+    <button id="scrollTopBtn" onclick="scrollTopPage()" aria-label="Scroll back to top of page">⬆</button>
+
+    <footer role="contentinfo">
+        <p>© 2026 Student Hub Portal | ITUE203 Full-Stack Web Development Frameworks | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

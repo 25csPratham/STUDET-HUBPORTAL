@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact University Administration and Support Desk">
+    <title>Student Hub Portal - Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <div class="notification" id="notification" role="region" aria-label="Campus Announcement">
+        <div>
+            📍 Academic Helpdesk is available Monday through Saturday from 9:00 AM to 5:00 PM.
+        </div>
+        <button onclick="closeBanner()" aria-label="Close Announcement Banner">✕</button>
+    </div>
+
+    <header role="banner">
+        <h1>📍 Contact Administration</h1>
+        <p>Get in touch with University Support, Examination & Admissions Cell</p>
+    </header>
+
+    <nav role="navigation" aria-label="Primary Navigation">
+        <div class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
+            ☰
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html" class="active">Contact</a>
+            <a href="admin.html">Admin</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container" role="main">
+        <div class="card">
+            <h2>Contact Institutional Helpdesk</h2>
+            <p>Send an inquiry regarding course registration, marks correction, or hostel facilities.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;">
+            <!-- Contact Form -->
+            <div class="card">
+                <h3>✉️ Send a Message</h3>
+                <br>
+                <form id="contactForm" novalidate>
+                    <label for="contactName"><strong>Full Name <span style="color:red;">*</span></strong></label>
+                    <input type="text" id="contactName" name="name" placeholder="Enter Your Name" required autocomplete="name">
+
+                    <label for="contactEmail"><strong>Email Address <span style="color:red;">*</span></strong></label>
+                    <input type="email" id="contactEmail" name="email" placeholder="Enter Your Email" required autocomplete="email">
+
+                    <label for="contactSubject"><strong>Subject <span style="color:red;">*</span></strong></label>
+                    <input type="text" id="contactSubject" name="subject" placeholder="e.g. Exam Hall Ticket Inquiry" required>
+
+                    <label for="contactMessage"><strong>Detailed Message <span style="color:red;">*</span></strong></label>
+                    <textarea id="contactMessage" name="message" rows="5" placeholder="Write your query or message here..." required></textarea>
+
+                    <button type="submit" id="contactBtn" style="margin-top:10px;width:100%;">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Campus Information -->
+            <div class="card">
+                <h3>🏛️ Campus Headquarters</h3>
+                <br>
+                <p><strong>Campus Address:</strong><br>
+                Student Hub Portal Administrative Cell<br>
+                Chandubhai S. Patel Institute of Technology (CSPIT)<br>
+                CHARUSAT Campus, Changa - 388421<br>
+                Dist: Anand, Gujarat, India</p>
+
+                <hr style="margin:15px 0;border:0;border-top:1px solid #e2e8f0;">
+
+                <p><strong>📧 Support Email:</strong><br>
+                <a href="mailto:support@studenthub.com" style="color:#005bea;">support@studenthub.com</a></p>
+
+                <br>
+                <p><strong>📞 Helpdesk Helplines:</strong><br>
+                +91 (02697) 265011 / 265021<br>
+                +91 9876543210 (Mon-Sat, 9 AM - 5 PM)</p>
+
+                <br>
+                <p><strong>🌐 Official Web Portal:</strong><br>
+                <a href="http://studenthub.local" style="color:#005bea;">http://studenthub.local</a></p>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()" aria-label="Close dialog">&times;</span>
+            <h2 id="modalTitle">🎓 Notification</h2>
+            <p id="modalText">Message goes here...</p>
+            <br>
+            <button type="button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode theme">🌙</button>
+    <button id="scrollTopBtn" onclick="scrollTopPage()" aria-label="Scroll back to top of page">⬆</button>
+
+    <footer role="contentinfo">
+        <p>© 2026 Student Hub Portal | ITUE203 Full-Stack Web Development Frameworks | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

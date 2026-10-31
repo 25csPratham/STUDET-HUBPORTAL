@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Academic Dashboard">
+    <title>Student Hub Portal - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <div class="notification" id="notification" role="region" aria-label="Campus Announcement">
+        <div>
+            🎉 Welcome Back! Your Student Dashboard has been updated with the latest semester marks.
+        </div>
+        <button onclick="closeBanner()" aria-label="Close Announcement Banner">✕</button>
+    </div>
+
+    <header role="banner">
+        <h1>📊 Student Dashboard</h1>
+        <p>Manage Your Academic Activities & Track Semester Progress</p>
+    </header>
+
+    <nav role="navigation" aria-label="Primary Navigation">
+        <div class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
+            ☰
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Admin</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container" role="main">
+        <!-- Student Identity Card -->
+        <section class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;">
+                <div>
+                    <h2>👋 Welcome, <span class="profile-name">Patel Pratham Bhavik</span></h2>
+                    <p><strong>Student ID :</strong> <span class="profile-id">25CS076</span> &nbsp;|&nbsp; <strong>Course :</strong> Bachelor of Technology (CSE)</p>
+                    <p><strong>Email :</strong> <span class="profile-email">student@studenthub.com</span></p>
+                </div>
+                <div>
+                    <a href="profile.html" style="background:#005bea;color:white;padding:10px 18px;border-radius:6px;text-decoration:none;display:inline-block;font-weight:bold;">
+                        👤 View Full Profile
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metrics Grid -->
+        <section class="dashboard" aria-label="Performance Metrics">
+            <div class="box">
+                <h3>📚 Registered Courses</h3>
+                <p style="font-size:26px;font-weight:bold;color:#005bea;">6 Subjects</p>
+                <span style="font-size:13px;color:#64748b;">Semester: 3rd (Odd Term)</span>
+            </div>
+            <div class="box">
+                <h3>📅 Overall Attendance</h3>
+                <p style="font-size:26px;font-weight:bold;color:#10b981;">92%</p>
+                <span style="font-size:13px;color:#64748b;">Minimum Required: 75%</span>
+            </div>
+            <div class="box">
+                <h3>🏆 Cumulative CGPA</h3>
+                <p style="font-size:26px;font-weight:bold;color:#f59e0b;">8.5 / 10</p>
+                <span style="font-size:13px;color:#64748b;">First Class with Distinction</span>
+            </div>
+            <div class="box">
+                <h3>🎉 Event Registrations</h3>
+                <p style="font-size:26px;font-weight:bold;color:#8b5cf6;">3 Upcoming</p>
+                <span style="font-size:13px;color:#64748b;"><a href="events.html" style="color:#8b5cf6;text-decoration:underline;">Browse All Events</a></span>
+            </div>
+        </section>
+
+        <!-- Academic Performance Table -->
+        <section class="card">
+            <h2>Academic Performance & Grade Card</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Subject Name</th>
+                        <th scope="col">Max Marks</th>
+                        <th scope="col">Marks Obtained</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Web Development Frameworks</strong></td>
+                        <td>100</td>
+                        <td><span style="font-weight:bold;color:#005bea;">85</span></td>
+                        <td><span style="background:#dcfce7;color:#15803d;padding:4px 10px;border-radius:12px;font-size:12px;font-weight:bold;">Pass</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Database Management Systems</strong></td>
+                        <td>100</td>
+                        <td><span style="font-weight:bold;color:#005bea;">90</span></td>
+                        <td><span style="background:#dcfce7;color:#15803d;padding:4px 10px;border-radius:12px;font-size:12px;font-weight:bold;">Pass</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Programming & Data Structures</strong></td>
+                        <td>100</td>
+                        <td><span style="font-weight:bold;color:#005bea;">88</span></td>
+                        <td><span style="background:#dcfce7;color:#15803d;padding:4px 10px;border-radius:12px;font-size:12px;font-weight:bold;">Pass</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Computer Networks</strong></td>
+                        <td>100</td>
+                        <td><span style="font-weight:bold;color:#005bea;">91</span></td>
+                        <td><span style="background:#dcfce7;color:#15803d;padding:4px 10px;border-radius:12px;font-size:12px;font-weight:bold;">Pass</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Quick Action Buttons -->
+        <section class="card">
+            <h2>⚡ Quick Actions & Downloads</h2>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;">
+                <button type="button" onclick="openModal('📄 Attendance Transcript: Current attendance rate 92%. Status: Eligible for University Exams.', 'Attendance Report')">
+                    Attendance Report
+                </button>
+                <button type="button" onclick="openModal('📥 Result Download Started! Your Grade Card PDF has been dispatched.', 'Download Result')">
+                    Download Result
+                </button>
+                <button type="button" onclick="location.href='events.html'">
+                    Register Event
+                </button>
+                <button type="button" onclick="openModal('✅ Profile details successfully synced across the student hub network.', 'Profile Sync')">
+                    Sync Profile
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()" aria-label="Close dialog">&times;</span>
+            <h2 id="modalTitle">🎓 Notification</h2>
+            <p id="modalText">Message goes here...</p>
+            <br>
+            <button type="button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode theme">🌙</button>
+    <button id="scrollTopBtn" onclick="scrollTopPage()" aria-label="Scroll back to top of page">⬆</button>
+
+    <footer role="contentinfo">
+        <p>© 2026 Student Hub Portal | ITUE203 Full-Stack Web Development Frameworks | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

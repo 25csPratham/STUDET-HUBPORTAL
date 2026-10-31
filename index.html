@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Hub Portal - Home Page for ITUE203 Practical 15 Full-Stack Submission">
+    <title>Student Hub Portal - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <!-- Notification Banner -->
+    <div class="notification" id="notification" role="region" aria-label="Campus Announcement">
+        <div>
+            🎉 Welcome to <strong>Student Hub Portal</strong>! Admissions & Semester Registration are now open.
+        </div>
+        <button onclick="closeBanner()" aria-label="Close Announcement Banner">✕</button>
+    </div>
+
+    <!-- Header -->
+    <header role="banner">
+        <h1>🎓 Student Hub Portal</h1>
+        <p>Your Complete Student Management & Academic Information System</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Primary Navigation">
+        <div class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
+            ☰
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Admin</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main id="main-content" class="container" role="main">
+        <!-- Image Slider -->
+        <div class="slider" aria-label="Campus Highlights Slider">
+            <div class="slide active-slide">
+                <img src="https://picsum.photos/1200/450?random=1" alt="CSPIT Modern University Campus">
+            </div>
+            <div class="slide">
+                <img src="https://picsum.photos/1200/450?random=2" alt="Central Academic Library and Study Hall">
+            </div>
+            <div class="slide">
+                <img src="https://picsum.photos/1200/450?random=3" alt="Students in Collaborative Computing Lab">
+            </div>
+            <button class="prev" onclick="prevSlide()" aria-label="Previous Slide">❮</button>
+            <button class="next" onclick="nextSlide()" aria-label="Next Slide">❯</button>
+        </div>
+
+        <!-- Welcome Card -->
+        <section class="card" aria-labelledby="welcome-heading">
+            <h2 id="welcome-heading">Welcome To Student Hub Portal</h2>
+            <p>
+                Student Hub Portal is a unified digital academic platform designed for college students, faculty, and administrators. 
+                It streamlines course registration, academic performance monitoring, event participation, profile management, and two-way institutional communication in one secure, accessible interface.
+            </p>
+            <br>
+            <button type="button" onclick="openModal('Explore all features: view your attendance, register for upcoming hackathons, and download semester grade cards!', 'Welcome')">
+                Learn More
+            </button>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="card" aria-labelledby="features-heading">
+            <h2 id="features-heading">Core Integrated Features</h2>
+            <div class="dashboard">
+                <div class="box">
+                    <h3>📝 Online Registration</h3>
+                    <p>Self-service student account registration with server-side validation and password hashing.</p>
+                </div>
+                <div class="box">
+                    <h3>🔐 Secure Authentication</h3>
+                    <p>Session-based login with role-based access control (Student vs. Administrator).</p>
+                </div>
+                <div class="box">
+                    <h3>📊 Live Dashboard</h3>
+                    <p>Real-time academic performance, registered courses, attendance tracking, and CGPA overview.</p>
+                </div>
+                <div class="box">
+                    <h3>🎉 Campus Events</h3>
+                    <p>Interactive event registrations with instant AJAX feedback and participation status.</p>
+                </div>
+                <div class="box">
+                    <h3>👤 Student Profile</h3>
+                    <p>Dynamic profile updates, personal details, contact information, and academic credentials.</p>
+                </div>
+                <div class="box">
+                    <h3>🛡️ Admin Control</h3>
+                    <p>Dedicated administration dashboard for managing students, tracking inquiries, and auditing feedbacks.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Accessible Modal Popup -->
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()" aria-label="Close dialog">&times;</span>
+            <h2 id="modalTitle">🎓 Notification</h2>
+            <p id="modalText">Message goes here...</p>
+            <br>
+            <button type="button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Theme Switcher -->
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode theme">🌙</button>
+
+    <!-- Scroll To Top -->
+    <button id="scrollTopBtn" onclick="scrollTopPage()" aria-label="Scroll back to top of page">⬆</button>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>© 2026 Student Hub Portal | ITUE203 Full-Stack Web Development Frameworks | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
